@@ -13,7 +13,6 @@ const Home = () => {
     /* Load all posts data from here */
     useEffect(() => {
         dispatch(loading(true))
-
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(res => res.json())
             .then(data => {
@@ -74,6 +73,8 @@ const Home = () => {
         toast.success("Created post successfully")
         event.target.reset()
     }
+
+    console.log(state)
     return (
         <div>
             <div className='lg:w-6/12 mx-auto p-12 my-12 bg-base-100 shadow-2xl rounded-lg'>

@@ -37,7 +37,7 @@ const AllPost = () => {
         }
     }
 
-
+    console.log(state)
 
     /* Update post from here */
     const handleUpdate = (id) => {
