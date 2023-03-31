@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import LoadingSpinner from '../components/LoadingSpinner,js';
+import LoadingSpinner from '../components/LoadingSpinner.js';
 import { loading } from '../redux/actionCreators/postActions';
 
 const Home = () => {

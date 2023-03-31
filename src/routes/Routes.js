@@ -1,3 +1,4 @@
+import Main from "../layout/Main";
 import Home from "../pages/Home";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -5,7 +6,7 @@ const { createBrowserRouter } = require("react-router-dom");
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: '',
+        element: <Main />,
         children: [
             {
                 path: '/',

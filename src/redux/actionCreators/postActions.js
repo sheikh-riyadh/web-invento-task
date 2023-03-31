@@ -1,9 +1,9 @@
 import { actionTypes } from "../actionTypes/actionTypes"
 
-export const loading = (isLoading) => {
+export const loading = (isSpinnerLoading) => {
     return {
         type: actionTypes.LOADING,
-        payload: isLoading
+        payload: isSpinnerLoading
     }
 }
 
