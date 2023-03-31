@@ -6,3 +6,19 @@ export const loading = (isLoading) => {
         payload: isLoading
     }
 }
+
+
+export const openModal = (isOpen) => {
+    return {
+        type: actionTypes.OPEN_MODAL,
+        payload: isOpen,
+    }
+}
+
+
+export const updatePost = (restPost) => {
+    return {
+        type: actionTypes.UPDATE_POST,
+        payload: restPost,
+    }
+}

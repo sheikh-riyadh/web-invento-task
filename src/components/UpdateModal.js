@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { actionTypes } from '../redux/actionTypes/actionTypes';
+import { openModal, updatePost } from '../redux/actionCreators/postActions';
 
 
 const UpdateModal = () => {
@@ -9,13 +9,13 @@ const UpdateModal = () => {
 
     /* Submit form here */
     const handleSubmit = (event) => {
-        dispatch({ type: actionTypes.UPDATE_MODAL, payload: false })
+        dispatch(openModal(false))
         event.preventDefault()
         const title = event.target.title.value;
         const body = event.target.body.value;
         const posts = JSON.parse(localStorage.getItem("POSTS"))
         const restPosts = posts?.filter(post => post?.id !== state?.updatePost[0]?.id)
-        dispatch({ type: actionTypes.UPDATE_POST, payload: restPosts })
+        dispatch(updatePost(restPosts))
 
         /* Set posts in local store from here */
         if (!posts) {

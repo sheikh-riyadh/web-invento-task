@@ -24,7 +24,7 @@ export const postReducer = (state = initialState, action) => {
                 ...state,
                 updatePost: action.payload
             }
-        case actionTypes.UPDATE_MODAL:
+        case actionTypes.OPEN_MODAL:
             return {
                 ...state,
                 isModalOpen: action.payload
