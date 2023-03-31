@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import { actionTypes } from '../redux/actionTypes/actionTypes';
 import { useDispatch, useSelector } from 'react-redux';
+import LoadingSpinner from '../components/LoadingSpinner,js';
+import { loading } from '../redux/actionCreators/postActions';
 
 const Home = () => {
 
@@ -11,7 +12,7 @@ const Home = () => {
 
     /* Load all posts data from here */
     useEffect(() => {
-        dispatch({ type: actionTypes.LOADING, payload: true })
+        dispatch(loading(true))
 
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(res => res.json())
@@ -22,14 +23,14 @@ const Home = () => {
                 if (!posts) {
                     localStorage.setItem("POSTS", JSON.stringify(data.splice(0, 15)))
                 }
-                dispatch({ type: actionTypes.LOADING, payload: false })
+                dispatch(loading(false))
             })
     }, [dispatch])
 
 
-    /*  if (state.isLoading) {
-         return <LoadingSpinner />
-     } */
+    if (state.isLoading) {
+        return <LoadingSpinner />
+    }
 
     /* Create new post from here */
     const handleSubmit = (event) => {
