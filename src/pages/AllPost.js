@@ -37,8 +37,6 @@ const AllPost = () => {
         }
     }
 
-    console.log(state)
-
     /* Update post from here */
     const handleUpdate = (id) => {
         const selectUpadatePost = state?.posts?.filter(post => post.id === id)

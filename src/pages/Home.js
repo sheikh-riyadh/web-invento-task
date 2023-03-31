@@ -62,11 +62,12 @@ const Home = () => {
         else {
             localStorage.setItem("POSTS", JSON.stringify(
                 [...posts, {
-                    id: posts.length + 1,
+                    id: posts[posts.length - 1].id + 1,
                     title,
                     body
                 }]
             ))
+
         }
 
         /* Tost message from here */
@@ -74,7 +75,7 @@ const Home = () => {
         event.target.reset()
     }
 
-    console.log(state)
+
     return (
         <div>
             <div className='lg:w-6/12 mx-auto p-12 my-12 bg-base-100 shadow-2xl rounded-lg'>
