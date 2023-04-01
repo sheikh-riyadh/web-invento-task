@@ -38,6 +38,12 @@ const Home = () => {
         const body = event.target.body.value;
         const posts = JSON.parse(localStorage.getItem("POSTS"))
 
+        /* Post sorting here */
+        posts?.sort((a, b) => {
+            return parseInt(a?.id) - parseInt(b?.id);
+        })
+
+
         /* Set post localStorage from here */
         if (!posts) {
             localStorage.setItem("POSTS", JSON.stringify(
